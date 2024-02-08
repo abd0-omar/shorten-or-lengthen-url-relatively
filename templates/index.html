@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block head %}
+<!-- <style> -->
+<!-- </style> -->
+{% endblock %}
+
+{% block content %}
+<h1 class="text-6xl">Index</h1>
+<!-- {% call super() %} -->
+<form action="/short" method="post" hx-post="/short" hx-target="#shortened_url">
+  <label for="url_form" class="text-2xl">Enter your url to make it tiny <input type="url" name="url"placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs"></label>
+</form>
+
+<div id="shortened_url">
+</div>
+
+<form action="/long" method="post" hx-post="/long" hx-target="#longened_url">
+  <label for="url_form" class="text-2xl">Enter your url to make it 6 inches <input type="url" name="url" placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs"></label>
+</form>
+
+<div id="longened_url">
+</div>
+
+{% endblock %}
